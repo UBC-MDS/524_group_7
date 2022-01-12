@@ -12,6 +12,9 @@ $ pip install pyeasyeda
 
 - TODO
 
+## Contributors
+This python package was developed by James Kim, Kristin Bunyan, Sukhleen Kaur, and Luming Yang. The team is from the Master of Data Science program at the University of the British Columbia.
+
 ## Contributing
 
 Interested in contributing? Check out the contributing guidelines. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.
