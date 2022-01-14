@@ -36,7 +36,7 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## License
 
-`pyeasyeda` was created by James Kim, Kristin Banyan, Luming Yangz and Sukhleen Kaur. It is licensed under the terms of the MIT license.
+`pyeasyeda` was created by James Kim, Kristin Banyan, Luming Yang and Sukhleen Kaur. It is licensed under the terms of the MIT license.
 
 ## Credits
 
