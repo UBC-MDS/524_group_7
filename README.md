@@ -4,7 +4,7 @@ Since exploratory data analysis is an imperative part of every analysis, this pa
 
 ## Functions
 
-- `clean_up` - This function performs initial steps of EDA on unstructured data. It cleans the dataset by removing null values and handles outliers in numeric variables based on a defined threshold.
+- `clean_up` - This function performs initial steps of EDA on unstructured data. It cleans the dataset by removing null values and help identify outliers in numeric variables based on a defined threshold.
 
 - `birds_eye_view` - This function visualizes the distributions of variables in the form of histograms and density plots. It also generates a correlation heatmap for numeric variables to study their relationships.
 
