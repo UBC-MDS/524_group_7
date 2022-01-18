@@ -35,8 +35,6 @@ def birds_eye_view(df, n=20, var_list=None):
     2. A bar chart for each categorical variable
     3. A correlation heatmap of the numeric variables.
 
-    The function also has built in warnings for identifying erroneous variables in the custom variable list, and which categorical variables are not suitable for bar charts based on their number of unique categories.
-
     Parameters
     ----------
     df : pandas.DataFrame
