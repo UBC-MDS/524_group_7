@@ -121,7 +121,13 @@ def birds_eye_view(df, n=20, var_list=None):
 
     # Plot just the custom variables from var_list (if applicable)
     else:
+        
         for custom_col in var_list:
+            all_cols = df.columns.to_list()
+            if custom_col not in all_cols:
+                raise TypeError("Variable name " +
+                                custom_col +
+                                " not found in data frame, please check inputs in var_list.")
 
             # Histograms
             if custom_col in numeric:
@@ -146,13 +152,6 @@ def birds_eye_view(df, n=20, var_list=None):
                     plt.title("Bar Chart for " + custom_col)
                     plt.figure()
                     bar_charts.append(chart)
-            else:
-                message2 = (
-                    "Variable name "
-                    + custom_col
-                    + " not found in data frame, please check inputs in var_list."
-                )
-                warnings.warn(message2, DeprecationWarning)
 
         # Heatmap
         corr_matrix = df[heatmap_list].corr()

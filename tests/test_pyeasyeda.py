@@ -27,8 +27,11 @@ def test_birds_eye_view_error():
     with raises(TypeError):
         pye.birds_eye_view(eda, n="2")
     
+    with raises(TypeError):
+        pye.birds_eye_view(eda, var_list=['notreal'])
+    
 def test_birds_eye_view_outputs():
-    """tests birds_eye_view vizulatization outputs"""
+    """tests birds_eye_view vizualization outputs"""
     
     #Load toy data set
     data = {'product_name': 
@@ -39,11 +42,12 @@ def test_birds_eye_view_outputs():
     
     eda = pd.DataFrame(data)
     
-    # Test birds_eye_view with defaults
     viz = pye.birds_eye_view(eda)
     viz_custom = pye.birds_eye_view(eda, var_list=['price','weight','product_name'])
     
-    # Test if plots generated and saved correctly - default
+    # Test birds_eye_view with default inputs
+    
+    # Test if each different vizualization type generated, that the correct amount generated, and that it saved correctly - default
     assert (
         type(viz["histograms"]) == list
     ), "Histogram objects should be stored in list of figures"
@@ -68,7 +72,7 @@ def test_birds_eye_view_outputs():
         "heatmap" in viz.keys()
     ), "There should be a 'heatmap' key in the viz dictionary"
 
-    # Test if plots generated and saved correctly - custom
+    # Test if each different vizualization type generated, that the correct amount generated, and that it saved correctly - custom
     assert (
         type(viz_custom["histograms"]) == list
     ), "Histogram objects should be stored in list of figures"
