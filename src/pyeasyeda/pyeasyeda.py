@@ -48,8 +48,8 @@ def birds_eye_view(df, n=20, var_list=None):
 
     Returns
     -------
-    charts: list
-        A list containing the plot objects created by this function
+    charts: dict
+        A dictionary containing the plot objects created by this function
 
     Examples
     --------
