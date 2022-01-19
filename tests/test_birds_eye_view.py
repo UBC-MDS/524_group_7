@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import pytest
 from pytest import raises
-from pyeasyeda import pyeasyeda as pye
+from pyeasyeda import birds_eye_view as pye
 
 
 def test_birds_eye_view_error():
