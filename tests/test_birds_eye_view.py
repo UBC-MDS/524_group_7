@@ -8,7 +8,7 @@ from pyeasyeda import pyeasyeda as pye
 
 
 def test_birds_eye_view_error():
-    """tests birds_eye_view handling of erroneous inputs"""
+    """tests birds_eye_view exception handling"""
 
     # Load toy data set
     data = {
@@ -63,7 +63,9 @@ def test_birds_eye_view_outputs():
     ), "Heatmap should be stored as a single matplotlib figure"
 
     # Tests that the correct amount of vizualizations generated
-    assert len(viz) == 3, "Number of items in the viz dictionary should be 3"
+    assert (
+        len(viz) == 3
+    ),"Number of items in the viz dictionary should be 3"
     assert (
         len(viz["histograms"]) == 3
     ), "Number of items in the 'histograms' key should be 3"
@@ -89,7 +91,9 @@ def test_birds_eye_view_outputs():
     ), "Heatmap should be stored as a single matplotlib figure"
 
     # Tests that the correct amount of vizualizations generated
-    assert len(viz_custom) == 3, "Number of items in the viz dictionary should be 3"
+    assert (
+        len(viz_custom) == 3
+    ), "Number of items in the viz dictionary should be 3"
     assert (
         len(viz_custom["histograms"]) == 2
     ), "Number of items in the 'histograms' key should be 2"
