@@ -32,9 +32,8 @@ def test_birds_eye_view_error():
     with raises(TypeError):
         pye.birds_eye_view(eda, var_list=["notreal"])
 
-
 def test_birds_eye_view_outputs():
-    """tests birds_eye_view vizualization outputs"""
+    """tests birds_eye_view visualization outputs"""
 
     # Load toy data set
     data = {
@@ -51,7 +50,7 @@ def test_birds_eye_view_outputs():
 
     # Tests for default inputs to the function
 
-    # Tests if each different vizualization type generated and that it saved correctly
+    # Tests if each different visualization type generated and that it saved correctly
     assert (
         type(viz["histograms"]) == list
     ), "Histogram objects should be stored in list of figures"
@@ -62,7 +61,7 @@ def test_birds_eye_view_outputs():
         str(type(viz["heatmap"])) == "<class 'matplotlib.axes._subplots.AxesSubplot'>"
     ), "Heatmap should be stored as a single matplotlib figure"
 
-    # Tests that the correct amount of vizualizations generated
+    # Tests that the correct amount of visualizations generated
     assert (
         len(viz) == 3
     ),"Number of items in the viz dictionary should be 3"
@@ -78,7 +77,7 @@ def test_birds_eye_view_outputs():
 
     # Tests for custom inputs to the function
 
-    # Tests if each different vizualization type generated and that it saved correctly
+    # Tests if each different visualization type generated and that it saved correctly
     assert (
         type(viz_custom["histograms"]) == list
     ), "Histogram objects should be stored in list of figures"
@@ -90,7 +89,7 @@ def test_birds_eye_view_outputs():
         == "<class 'matplotlib.axes._subplots.AxesSubplot'>"
     ), "Heatmap should be stored as a single matplotlib figure"
 
-    # Tests that the correct amount of vizualizations generated
+    # Tests that the correct amount of visualizations generated
     assert (
         len(viz_custom) == 3
     ), "Number of items in the viz dictionary should be 3"
