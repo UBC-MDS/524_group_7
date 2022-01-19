@@ -9,9 +9,10 @@ def close_up(df, n=1):
 
         Parameters
         ----------
-        df : dataframe
-            dataframe to create the visualization(s)
-        n : number of visualizations of the variable(s) with the 
+        df : pd.core.frame.DataFrame
+             dataframe to create the visualization(s)
+        n : int
+            number of visualizations of the variable(s) with the 
             strongest correlation to the dependent variable to be displayed,
             defaults to 1
 
@@ -44,14 +45,12 @@ def close_up(df, n=1):
     max_row = np.argmax(np.max(corr, axis=1))
     max_col = np.argmax(np.max(corr, axis=0))
     viz = {}  # viz dict to be returned
-    # print("Strongest correlations:")
 
     # plot
     for i in range(n):
         max_row = np.argmax(np.max(corr, axis=1))
         max_col = np.argmax(np.max(corr, axis=0))
         coef = corr_matrix.iloc[max_row, max_col]
-        # print(f"Top {i+1} {corr_matrix.columns[max_row]} and {corr_matrix.columns[max_col]} coeff: {coef:.3f}")
         points = (
             alt.Chart(df, title=f'coeff: {coef:.3f}')
             .mark_point(opacity=0.3)
