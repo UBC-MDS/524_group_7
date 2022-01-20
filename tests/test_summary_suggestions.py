@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import altair as alt
-from pyeasyeda.close_up import close_up
+from pyeasyeda.summary_suggestions import summary_suggestions
 import pytest
 
 
@@ -19,14 +19,14 @@ def test_csummary_suggestions_error():
     df = pd.DataFrame(toy_data)
 
     # Checking invalid inputs
-    with raises(TypeError):
-        pytest.summary_suggestions(1)
+    with pytest.raises(TypeError):
+        summary_suggestions(1)
 
-    with raises(TypeError):
-        pytest.summary_suggestions(df, threshold = "a")
+    with pytest.raises(TypeError):
+        summary_suggestions(df, threshold = "a")
 
-    with raises(TypeError):
-        pytest.summary_suggestions(df, threshold = [0.8])
+    with pytest.raises(TypeError):
+        summary_suggestions(df, threshold = [0.8])
 
 
 def test_summary_suggestions():
