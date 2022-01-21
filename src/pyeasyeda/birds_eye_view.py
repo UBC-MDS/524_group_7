@@ -64,19 +64,10 @@ def birds_eye_view(df, n=20, var_list=None):
 
         # Bar Charts
         for cat_col in categorical:
-            if len(df[cat_col].value_counts()) > 10:
-                message = (
-                    "The variable "
-                    + cat_col
-                    + " has more than 10 "
-                    + "unique values, and is not suitable for a bar chart."
-                )
-                warnings.warn(message, DeprecationWarning)
-            else:
-                chart = sns.countplot(data=df, x=(cat_col))
-                plt.title("Bar Chart for " + cat_col)
-                plt.figure()
-                bar_charts.append(chart)
+            chart = sns.countplot(data=df, x=(cat_col))
+            plt.title("Bar Chart for " + cat_col)
+            plt.figure()
+            bar_charts.append(chart)
 
         # Heatmap
         corr_matrix = df[numeric].corr()
@@ -113,19 +104,10 @@ def birds_eye_view(df, n=20, var_list=None):
 
             # Bar Charts
             elif custom_col in categorical:
-                if len(df[custom_col].value_counts()) > 10:
-                    message = (
-                        "The variable "
-                        + custom_col
-                        + " has more than 10 "
-                        + "unique values, and is not suitable for a bar chart."
-                    )
-                    warnings.warn(message, DeprecationWarning)
-                else:
-                    chart = sns.countplot(data=df, x=(custom_col))
-                    plt.title("Bar Chart for " + custom_col)
-                    plt.figure()
-                    bar_charts.append(chart)
+                chart = sns.countplot(data=df, x=(custom_col))
+                plt.title("Bar Chart for " + custom_col)
+                plt.figure()
+                bar_charts.append(chart)
 
         # Heatmap
         corr_matrix = df[heatmap_list].corr()
