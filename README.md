@@ -8,7 +8,7 @@ Since exploratory data analysis is an imperative part of every analysis, this pa
 
 - `birds_eye_view` - This function visualizes the distributions of variables in the form of histograms and density plots. It also generates a correlation heatmap for numeric variables to study their relationships.
 
-- `close_up` - This function creates a scatterplot of the variable(s) most strongly correlated with the dependent variable. The plot also produces a trend line to model the correlation between the variables.
+- `close_up` - This function accepts a pandas dataframe and the number of pairs of variables with strongest correlations, and creates vertically combined scatterplots with a linear trend for each pair of variables with stronglest correlations.
 
 - `summary_suggestions` - This function outputs a table of summary statistics and prints analysis considerations that help highlight potential issues, if applicable.
 
