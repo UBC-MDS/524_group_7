@@ -2,10 +2,12 @@ import pandas as pd
 import numpy as np
 
 def summary_suggestions(df, threshold = 0.8):
-    """Takes a dataframe object and displays a table of summary statistics. 
-    Underneath that table it prints analysis considerations that 
-    help highlight potential issues, if applicable, and serves as a general 
-    guideline for the analysis.
+    """Takes in a pandas dataframe and returns a list object comprising
+    of 3 dataframes and a list. The dataframes correspond to the
+    summary statistics of numeric and categorical variables each and
+    the proportion of unique values for categorical variables. The 
+    nested list is of the categorical variables that exceed the threshold
+    for considering dropping variables with high unique values.
 
     Parameters
     ----------
@@ -13,28 +15,23 @@ def summary_suggestions(df, threshold = 0.8):
         Dataframe to be examined
 
     threshold : float
-        threshold for considering class imbalance
+        threshold for considering dropping variables with high unique values
 
     Returns
     -------
-
-    numeric_summary_df : pandas dataframe
-        Dataframe for summary statistics of numeric variables
-
-    categorical_summary_df : pandas dataframe
-        Dataframe for summary statistics of categorical variables
+    results : list
+        List of summary dataframes
 
     Examples
     --------
     >>> summary_suggestions(df)
 
-    (summary statistics for numeric variables)
-        
-    ** Potential Analysis Considerations: **
-    Please review and take the following into consideration:
-    
-    Class Imbalance: There appears to be class imbalance in the variable X. 
-    Unique Values: Variable X is comprised of 97% unique values in it's observations.'
+    [
+    (summary statistics for numeric variables),
+    (summary statistics for categorical variables),
+    (percentage of unique values for categorical variables),
+    [list of variables with percentage of unique values higher than the threshold]
+    ]
     
     """
 
@@ -42,29 +39,22 @@ def summary_suggestions(df, threshold = 0.8):
     if not isinstance(df, pd.DataFrame):
         raise TypeError("Input df must be a pandas dataframe object")
 
-    if type(threshold) != int:
-        raise TypeError("Input threshold must be an integer")
+    if not ((type(threshold) == float) | (type(threshold) == int)):
+        raise TypeError("Input threshold must be a float value between 0 and 1")
 
-    if not isinstance(numeric_summary_df, pd.DataFrame):
-        raise TypeError("Output summary dataframe df for numeric columns must be a pandas dataframe object")
-
-    if not isinstance(categorical_summary_df, pd.DataFrame):
-        raise TypeError("Output summary dataframe df for categorical columns must be a pandas dataframe object")
+    if not (0 < threshold < 1):
+        raise TypeError("Input threshold must be a float value between 0 and 1")
 
     numeric_summary_df = df.select_dtypes(include=np.number).describe()
     categorical_summary_df = df.select_dtypes(include=np.object_).describe()
 
-    print("** Potential Analysis Considerations: ** \n \
-    Please review and take the following into consideration:")
+    results = []
+    results.extend([numeric_summary_df, categorical_summary_df])
 
-    print(f"Summary statistics for numeric columns of the dataframe: \n\n {numeric_summary_df} \n\n")
-    print(f"Summary statistics for categorical columns of the dataframe: \n\n {categorical_summary_df} \n\n")
+    unique_val_df = categorical_summary_df[categorical_summary_df.index == 'unique']/len(df)
+    filtered_unique_val_df = unique_val_df.loc['unique'] > threshold
+    unique_val_vars = [*filter(filtered_unique_val_df.get, filtered_unique_val_df.index)]
 
-    class_imbalance_df = categorical_summary_df[categorical_summary_df.index == 'unique']/len(df)
-    filtered_class_imbalance_df = class_imbalance_df.loc['unique'] > threshold
-    class_imbalance_vars = [*filter(class_imbalance_df.get, class_imbalance_df.index)]
+    results.extend([unique_val_df, unique_val_vars])
+    return results
     
-    for var in class_imbalance_vars:
-        print(f"There appears to be class imbalance in variable {var} \
-        which comprises of {round(class_imbalance_df[var]['unique']*100)}% unique values. \n ")
-
