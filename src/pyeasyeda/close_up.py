@@ -4,17 +4,22 @@ import altair as alt
 
 
 def close_up(df, n=1):
-    """Takes in a dataframe object and the number of pairs of strongest correlations, and
-    returns scatterplots with a correlation trend for each pair.
+    """Accepts a dataframe and the number of pairs of variables with strongest correlations, and
+    returns vertically combined scatterplots with a correlation trend for each pair. 
 
         Parameters
         ----------
         df : pd.core.frame.DataFrame
              dataframe to create the visualization(s)
         n : int
-            number of visualizations of the variable(s) with the 
-            strongest correlation to the dependent variable to be displayed,
+            number of pairs of variables with strongest correlations to be displayed,
             defaults to 1
+            
+        Returns
+        -------
+        chart: altair.vegalite.v4.api.Chart (if n = 1)
+               altair.vegalite.v4.api.VConcatChart (if n > 1)
+               Vertically combined scatterplots with a correlation trend for each pair
 
         Examples
         --------
