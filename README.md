@@ -6,7 +6,7 @@ Since exploratory data analysis is an imperative part of every analysis, this pa
 
 - `clean_up` - This function performs initial steps of EDA on unstructured data. It cleans the dataset by removing null values and identifying potential outliers in numeric variables based on a defined threshold.
 
-- `birds_eye_view` - This function visualizes the distributions of variables in the form of histograms and density plots. It also generates a correlation heatmap for numeric variables to study their relationships.
+- `birds_eye_view` - This function visualizes the distributions of variables in the form of histograms for the numeric variables, bar charts for the categorical variables, and a heatmap for the numeric variables.
 
 - `close_up` - This function creates a scatterplot of the variable(s) most strongly correlated with the dependent variable. The plot also produces a trend line to model the correlation between the variables.
 
