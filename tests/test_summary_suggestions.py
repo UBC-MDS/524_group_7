@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import altair as alt
 from pyeasyeda.summary_suggestions import summary_suggestions
 import pytest
 
@@ -41,17 +40,14 @@ def test_summary_suggestions():
     }
     df = pd.DataFrame(toy_data)
 
-    # unit tests - returned pandas dataframe object
+    # unit tests for default values
     results = summary_suggestions(df)
 
-    assert results[3] == ['views']
-    , "Variables with large number of unique values incorrectly identified"
+    assert results[3] == ['views'], "Variables with large number of unique values incorrectly identified"
 
-    assert results[0]['income'].sum() == 82.42811271761728
-    , "Wrong summary statistics for 'income' variable"
+    assert results[0]['income'].sum() == 82.42811271761728, "Wrong summary statistics for 'income' variable"
 
-    assert results[2]['views']['unique'] == 0.8333333333333334
-    , "Percentage of unique values incorrectly calculated for variable 'views'"
+    assert results[2]['views']['unique'] == 0.8333333333333334, "Percentage of unique values incorrectly calculated for variable 'views'"
 
     assert (
         len(results[3]) == 1
