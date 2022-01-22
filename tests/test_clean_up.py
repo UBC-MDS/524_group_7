@@ -50,11 +50,11 @@ def test_clean_up():
     
     # Check if the statement contains the correct outliers
     assert (
-        '27000000' in statement
-    ), "Outlier should contain 27000000"
+        '2.7e+07' in statement
+    ), "Outlier should contain 2.7e+07"
     assert (
-        '150000' in statement
-    ), "Outlier should contain 150000"
+        '1.5e+05' in statement
+    ), "Outlier should contain 1.5e+05"
 
 def test_clean_up_error():
     """Check TypeError and ValueError raised when inputs are not appropriate."""
