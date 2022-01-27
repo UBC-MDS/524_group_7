@@ -20,7 +20,7 @@ Other packages that offer similar functionality are:
 ## Installation
 
 ```bash
-$ pip install git+https://github.com/UBC-MDS/pyeasyeda
+$ pip install pyeasyeda
 ```
 
 ## Usage
