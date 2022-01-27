@@ -1,5 +1,7 @@
 # pyeasyeda
 
+[![ci-cd](https://github.com/UBC-MDS/pyeasyeda/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/UBC-MDS/pyeasyeda/actions/workflows/ci-cd.yml)
+
 Since exploratory data analysis is an imperative part of every analysis, this package aims at providing efficient data scrubbing and visualization tools to perform preliminary EDA on raw data. The package can be leveraged to clean the dataset and visualize relationships between features to generate insightful trends.
 
 ## Functions
