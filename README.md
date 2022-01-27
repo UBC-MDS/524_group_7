@@ -23,8 +23,9 @@ Other packages that offer similar functionality are:
 $ pip install git+https://github.com/UBC-MDS/pyeasyeda
 ```
 
-## Usage
+## Usage (To be updated)
 
+```
 import pandas as pd
 from pyeasyeda.clean_up import clean_up
 from pyeasyeda.birds_eye_view import birds_eye_view
@@ -37,6 +38,7 @@ clean_up(df)
 birds_eye_view(df)
 close_up(df)
 summary_suggestions(df)
+```
 
 ## Contributors
 This python package was developed by James Kim, Kristin Bunyan, Luming Yang and Sukhleen Kaur. The team is from the Master of Data Science program at the University of the British Columbia.
