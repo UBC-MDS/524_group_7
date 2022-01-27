@@ -40,6 +40,9 @@ close_up(df)
 summary_suggestions(df)
 ```
 
+## Documentation
+The official documentation is hosted on Read the Docs: https://pyeasyeda.readthedocs.io/en/latest/
+
 ## Contributors
 This python package was developed by James Kim, Kristin Bunyan, Luming Yang and Sukhleen Kaur. The team is from the Master of Data Science program at the University of the British Columbia.
 
