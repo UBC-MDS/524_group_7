@@ -2,6 +2,9 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.1 (2022-01-27)
+
+
 ## v0.2.0 (2022-01-27)
 ### Feature
 * Close_up ([`24329e8`](https://github.com/UBC-MDS/pyeasyeda/commit/24329e8bebf3286c29900cc6442aee0c3d881913))
