@@ -25,7 +25,18 @@ $ pip install git+https://github.com/UBC-MDS/pyeasyeda
 
 ## Usage
 
-- TODO
+import pandas as pd
+from pyeasyeda.clean_up import clean_up
+from pyeasyeda.birds_eye_view import birds_eye_view
+from pyeasyeda.close_up import close_up
+from pyeasyeda.summary_suggestions import summary_suggestions
+
+df = pd.read_csv("/data/AB_NYC_2019.csv")
+
+clean_up(df)
+birds_eye_view(df)
+close_up(df)
+summary_suggestions(df)
 
 ## Contributors
 This python package was developed by James Kim, Kristin Bunyan, Luming Yang and Sukhleen Kaur. The team is from the Master of Data Science program at the University of the British Columbia.
