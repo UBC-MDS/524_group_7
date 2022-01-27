@@ -24,21 +24,7 @@ $ pip install git+https://github.com/UBC-MDS/pyeasyeda
 ```
 
 ## Usage (To be updated)
-
-```
-import pandas as pd
-from pyeasyeda.clean_up import clean_up
-from pyeasyeda.birds_eye_view import birds_eye_view
-from pyeasyeda.close_up import close_up
-from pyeasyeda.summary_suggestions import summary_suggestions
-
-df = pd.read_csv("/data/AB_NYC_2019.csv")
-
-clean_up(df)
-birds_eye_view(df)
-close_up(df)
-summary_suggestions(df)
-```
+Please refer to the documentation link provided below, under 'Example usage' section, for the detailed demonstration of how to use the package.
 
 ## Documentation
 The official documentation is hosted on Read the Docs: https://pyeasyeda.readthedocs.io/en/latest/
