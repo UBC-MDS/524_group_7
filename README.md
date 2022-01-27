@@ -23,7 +23,7 @@ Other packages that offer similar functionality are:
 $ pip install git+https://github.com/UBC-MDS/pyeasyeda
 ```
 
-## Usage (To be updated)
+## Usage
 Please refer to the documentation link provided below, under 'Example usage' section, for the detailed demonstration of how to use the package.
 
 ## Documentation
