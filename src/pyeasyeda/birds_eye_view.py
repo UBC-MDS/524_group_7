@@ -108,7 +108,7 @@ def birds_eye_view(df, n=20, var_list=None):
             # Bar Charts
             elif custom_col in categorical:
                 if len(pd.unique(df[custom_col])) > 11:
-                    print(cat_col, " has too many unique values")
+                    print(custom_col, " has too many unique values")
                 else:
                     chart = sns.countplot(data=df, x=(custom_col))
                     plt.title("Bar Chart for " + custom_col)
