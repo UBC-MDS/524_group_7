@@ -10,7 +10,7 @@ patch_without_tag = "true"
 
 [tool.poetry]
 name = "pyeasyeda"
-version = "0.2.2"
+version = "0.2.3"
 description = "Make exploratory data analysis easier! "
 authors = ["Luming Yang"]
 license = "MIT"
