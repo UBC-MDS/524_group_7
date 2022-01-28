@@ -26,10 +26,10 @@ $ pip install pyeasyeda
 ```
 
 ## Usage
-Please refer to the documentation link provided below, under 'Example usage' section, for the detailed demonstration of how to use the package.
+After installing the package through the command above, please check the example usage of the package at [pyeasyeda/example](https://pyeasyeda.readthedocs.io/en/latest/example.html) on Read the Docs.
 
 ## Documentation
-The official documentation is hosted on Read the Docs: https://pyeasyeda.readthedocs.io/en/latest/
+The official documentation is hosted at [pyeasyeda](https://pyeasyeda.readthedocs.io/en/latest/) on Read the Docs.
 
 ## Contributors
 This python package was developed by James Kim, Kristin Bunyan, Luming Yang and Sukhleen Kaur. The team is from the Master of Data Science program at the University of the British Columbia.
