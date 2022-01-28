@@ -39,6 +39,7 @@ clean_up(df)
 plots = birds_eye_view(df)
 close_up(df, 1)
 summary_suggestions(df)
+
 ```
 Please check our official documentation for the example usage of the package at [pyeasyeda/example](https://pyeasyeda.readthedocs.io/en/latest/example.html) on Read the Docs.
 
