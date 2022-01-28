@@ -26,7 +26,21 @@ $ pip install pyeasyeda
 ```
 
 ## Usage
-After installing the package through the command above, please check the example usage of the package at [pyeasyeda/example](https://pyeasyeda.readthedocs.io/en/latest/example.html) on Read the Docs.
+After installing the package through the command above, please run the following commands from the root of the project repo as a quick demo. 
+```
+python
+import pandas as pd
+from pyeasyeda.clean_up import clean_up
+from pyeasyeda.birds_eye_view import birds_eye_view
+from pyeasyeda.close_up import close_up
+from pyeasyeda.summary_suggestions import summary_suggestions
+df = pd.read_csv("tests/data/penguins_test.csv")
+clean_up(df)
+plots = birds_eye_view(df)
+close_up(df, 1)
+summary_suggestions(df)
+```
+Please check our official documentation for the example usage of the package at [pyeasyeda/example](https://pyeasyeda.readthedocs.io/en/latest/example.html) on Read the Docs.
 
 ## Documentation
 The official documentation is hosted at [pyeasyeda](https://pyeasyeda.readthedocs.io/en/latest/) on Read the Docs.
