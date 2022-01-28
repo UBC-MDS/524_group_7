@@ -26,7 +26,7 @@ $ pip install pyeasyeda
 ```
 
 ## Usage
-After installing the package through the command above, please run the following commands from the root of the project repo as a quick demo. 
+After installing the package through the command above, please run the following commands in the terminal from the root of the project repo as a quick demo. 
 ```
 python
 import pandas as pd
